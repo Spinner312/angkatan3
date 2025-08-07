@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery - Axel Hidayat</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .gallery-container img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gallery</h1>
+    <nav>
+      <div class="burger">☰</div>
+      <a href="index.html">Home</a>
+      <a href="download-cv.pdf">Download CV</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <div class="gallery-container">
+    <img src="asset/Gambar anjing (1).jpg" alt="Anjing 1">
+    <img src="asset/Gambar anjing (2).jpg" alt="Anjing 2">
+    <img src="asset/Gambar anjing (3).jpg" alt="Anjing 3">
+    <img src="asset/Gambar anjing (4).jpg" alt="Anjing 4">
+    <img src="asset/Gambar anjing (5).jpg" alt="Anjing 5">
+  </div>
+
+  <footer>
+    &copy; 2025 @ Axel Hidayat
+  </footer>
+</body>
+</html>

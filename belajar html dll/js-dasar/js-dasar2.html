@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator Sederhana</title>
+</head>
+<body>
+  <form action="" method="post" onsubmit="return false">
+    <label for="nilai1">Nilai 1</label><br />
+    <input type="number" id="nilai1" /><br />
+
+    <label for="nilai2">Nilai 2</label><br />
+    <input type="number" id="nilai2" /><br /><br />
+
+    <button type="submit" onclick="hitung()">Tambah</button>
+    <button type="submit" onclick="kurang()">Kurang</button>
+    <button type="submit" onclick="perkalian()">Perkalian</button>
+    <button type="submit" onclick="pembagian()">Pembagian</button>
+    <button type="reset" onclick="resetHasil()">reset</button>
+  </form>
+
+  <p id="hasil"></p>
+
+  <script>
+    let nilai1, nilai2;
+
+    function deklarasi() {
+      nilai1 = parseFloat(document.querySelector("#nilai1").value) ||0;
+      nilai2 = parseFloat(document.querySelector("#nilai2").value) ||0;
+    }
+
+    function hitung() {
+      deklarasi();
+      let hasil = nilai1 + nilai2;
+      document.getElementById("hasil").innerHTML = `Hasil Penjumlahan: ${hasil}`;
+    }
+
+    function kurang() {
+      deklarasi();
+      let hasil = nilai1 - nilai2;
+      document.getElementById("hasil").innerHTML = `Hasil Pengurangan: ${hasil}`;
+    }
+
+     function perkalian() {
+      deklarasi();
+      let hasil = nilai1 * nilai2;
+      document.getElementById("hasil").innerHTML = `Hasil Perkalian: ${hasil}`;
+    }
+
+    function pembagian() {
+  deklarasi();
+
+  if (nilai1 === 0 && nilai2 === 0) {
+    alert("Tidak bisa membagi 0 dengan 0");
+    document.getElementById("hasil").innerHTML = "Error: 0 dibagi 0 tidak terdefinisi";
+    return;
+  }
+
+  if (nilai2 === 0) {
+    alert("Tidak bisa membagi dengan 0");
+    document.getElementById("hasil").innerHTML = "Error: Pembagian dengan 0";
+    return;
+  }
+
+  let hasil = nilai1 / nilai2;
+  document.getElementById("hasil").innerHTML = `Hasil Pembagian: ${hasil}`;
+}
+
+    function resetHasil() {
+      document.getElementById("hasil").innerHTML = "";
+    }
+  </script>
+</body>
+</html>

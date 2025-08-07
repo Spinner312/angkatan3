@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function hitung(){
+      let nilai1 = parseFloat(document.querySelector("#nilai1").value);
+      let nilai2 = parseFloat(document.querySelector("#nilai2").value);
+      let operator = document.querySelector("operator").value;
+      let hasil;
+    }
+
+    switch (operator) {
+      case "+":
+        hasil = nilai1 + nilai2;
+        break;
+      case "-" :
+        hasil = nilai1 - nilai2;
+      case "/":
+        hasil = nilai1 / nilai2;
+        break;
+      case "*" :
+        hasil = nilai1 * nilai2
+        break;
+      default:
+        alert("operator tidak valid");
+        break;
+    }
+
+  //   // IF
+  //   //let nilai1 = 4;
+  //   // if(nilai1 > 0){
+  //     console.log("positive");
+  //   }else if(nilai1 < 0){
+  //     console.log("negative");
+  //   }else{
+  //     console.log("Nol1")
+  //   }
+  //   if (nilai1 % 2 == 0){
+  //     console.log("Nilai genap");
+  //   }else{
+  //     console.log("nilai ganjil")
+  //   }
+
+  //   // FOR
+  //   const cars = ["Saab", "Volvo", "BMW"];
+  //   console.log(cars);
+  //   for (let index = 0; index < cars.length; index++) {
+  //     const element = cars[index];
+  //   }
+
+  //   const fruits = [
+  //     ["Apple", "grape"],
+  //     ["banana", "avocado"],
+  // ];
+  //  // console.log(fruits[1][0]);
+  </script>
+</body>
+</html>

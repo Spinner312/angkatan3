@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Data Mahasiswa</title>
+  <!-- atas nama Axel Joy -->
+  <style>
+    body {
+      background-color: #cce0ff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+    }
+    .radio-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .btn-group {
+      margin-top: 15px;
+      text-align: center;
+    }
+    button {
+      padding: 8px 20px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Data Mahasiswa</h2>
+  <h3>Pusat Pelatihan Kerja Jakarta Pusat</h3>
+
+  <!-- Form Input -->
+  <form onsubmit="tampilkanData(); return false;">
+    <label for="nim">NIM</label>
+    <input type="text" id="nim" required>
+
+    <label for="nama">Nama Mahasiswa</label>
+    <input type="text" id="nama" required>
+
+    <label for="jk">Jenis Kelamin</label>
+    <select id="jk" required>
+      <option value="">-- Pilih Jenis Kelamin --</option>
+      <option value="Pria">Pria</option>
+      <option value="Wanita">Wanita</option>
+    </select>
+
+    <label for="agama">Agama</label>
+    <select id="agama" required>
+      <option value="">-- Pilih Agama --</option>
+      <option value="Islam">Islam</option>
+      <option value="Kristen">Kristen</option>
+      <option value="Katolik">Katolik</option>
+      <option value="Hindu">Hindu</option>
+      <option value="Budha">Budha</option>
+    </select>
+
+    <label>Status</label>
+    <div class="radio-group">
+      <label><input type="radio" name="status" value="Pria" required> Pria</label>
+      <label><input type="radio" name="status" value="Wanita"> Wanita</label>
+    </div>
+
+    <label for="jurusan">Jurusan Unikom</label>
+    <select id="jurusan" required>
+      <option value="">-- Pilih Jurusan --</option>
+      <option value="Informatika">Informatika</option>
+      <option value="Sistem Informasi">Sistem Informasi</option>
+      <option value="Teknik Komputer">Teknik Komputer</option>
+    </select>
+
+    <label for="komentar">Komentar</label>
+    <textarea id="komentar" rows="3"></textarea>
+
+    <div class="btn-group">
+      <button type="submit">Kirim</button>
+      <button type="reset">Ulang</button>
+    </div>
+  </form>
+
+  <!-- Form Output -->
+  <form>
+    <label>NIM</label>
+    <input type="text" id="r_nim" disabled>
+
+    <label>Nama Mahasiswa</label>
+    <input type="text" id="r_nama" disabled>
+
+    <label>Jenis Kelamin</label>
+    <input type="text" id="r_jk" disabled>
+
+    <label>Agama</label>
+    <input type="text" id="r_agama" disabled>
+
+    <label>Status</label>
+    <div class="radio-group">
+      <label><input type="radio" id="r_pria" name="r_status" disabled> Pria</label>
+      <label><input type="radio" id="r_wanita" name="r_status" disabled> Wanita</label>
+    </div>
+
+    <label>Jurusan Unikom</label>
+    <input type="text" id="r_jurusan" disabled>
+
+    <label>Komentar</label>
+    <textarea id="r_komentar" rows="3" disabled></textarea>
+  </form>
+
+  <!-- Script -->
+  <script>
+    function tampilkanData() {
+      const nim = document.getElementById("nim").value;
+      const nama = document.getElementById("nama").value;
+      const jk = document.getElementById("jk").value;
+      const agama = document.getElementById("agama").value;
+      const status = document.querySelector('input[name="status"]:checked')?.value || '';
+      const jurusan = document.getElementById("jurusan").value;
+      const komentar = document.getElementById("komentar").value;
+
+      document.getElementById("r_nim").value = nim;
+      document.getElementById("r_nama").value = nama;
+      document.getElementById("r_jk").value = jk;
+      document.getElementById("r_agama").value = agama;
+      document.getElementById("r_komentar").value = komentar;
+      document.getElementById("r_jurusan").value = jurusan;
+
+      if (status === "Pria") {
+        document.getElementById("r_pria").checked = true;
+      } else if (status === "Wanita") {
+        document.getElementById("r_wanita").checked = true;
+      }
+    }
+  </script>
+
+</body>
+</html>

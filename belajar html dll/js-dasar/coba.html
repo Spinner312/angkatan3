@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Sederhana</title>
+</head>
+<body>
+  <h3>Kalkulator</h3>
+  <input type="number" id="nilai1" placeholder="Masukkan angka pertama">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" id="nilai2" placeholder="Masukkan angka kedua">
+  <button onclick="hitung()">Hitung</button>
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function hitung() {
+      let nilai1 = parseFloat(document.querySelector("#nilai1").value);
+      let nilai2 = parseFloat(document.querySelector("#nilai2").value);
+      let operator = document.querySelector("#operator").value;
+      let hasil;
+
+      switch (operator) {
+        case "+":
+          hasil = nilai1 + nilai2;
+          break;
+        case "-":
+          hasil = nilai1 - nilai2;
+          break;
+        case "*":
+          hasil = nilai1 * nilai2;
+          break;
+        case "/":
+          hasil = nilai1 / nilai2;
+          break;
+        default:
+          alert("Operator tidak valid");
+          return;
+      }
+
+      document.getElementById("hasil").textContent = hasil;
+    }
+  </script>
+</body>
+</html>
