@@ -110,7 +110,6 @@ foreach ($data_siswa as $kunci => $nilai_data) {
 ?>
 
 
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -122,18 +121,17 @@ foreach ($data_siswa as $kunci => $nilai_data) {
     <?php 
     // Perulangan luar (horizontal) untuk membuat baris (<tr>)
     for ($i = 0; $i < 5; $i++) : 
-      if($i % 2 == 0){
-        echo "< style='background-color: red;'>";
-      } else {
-        echo "<tr>";
-      }
+        if($i % 2 == 0){
+            echo "<tr style='background-color: red;'>";
+        } else {
+            echo "<tr>";
+        }
     ?>
-        <tr>
           <?php 
-          // Perulangan dalam (vertikal) untuk membuat kolom (<td>)
-          for ($j = 0; $j < 3; $j++) :
-          ?>
-            <td><?php echo "$i, $j"; ?></td>
+          // Perulangan dalam (vertikal) untuk membuat kolom (<td>)//
+          for ($j = 0; $j < 3; $j++) :
+          ?>
+            <td><?php echo "Baris $i, Kolom $j"; ?></td>
           <?php endfor; ?>
         </tr>
     <?php endfor; ?>
